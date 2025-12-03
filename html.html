@@ -1,0 +1,121 @@
+//1
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Form</title>
+</head>
+<body>
+
+  <form>
+    <label>Name:</label>
+    <input type="text" name="name"><br>
+
+    <label>Email:</label><br>
+    <input type="email" name="email"><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+</body>
+</html>
+
+//2
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flexbox Layout</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;  
+      align-items: center;     
+    }
+
+    .container {
+      display: flex;
+      gap: 20px;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+     
+      display: flex;
+      justify-content: center; 
+      align-items: center;     
+     
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+  </div>
+
+</body>
+</html>
+//3
+
+
+body {
+  font-size: 24px;
+}
+
+
+@media (max-width: 900px) and (min-width: 600px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+
+@media (max-width: 599px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+//4
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document </title>
+  
+</head>
+<body>
+
+  <button id="Btn">Hide Image</button>
+  <br>
+  <img id="myImage" src=" " >
+
+  <script>
+    const btn = document.getElementById("Btn");
+    const img = document.getElementById("myImage");
+
+    const isHidden = sessionStorage.getItem("imageHidden");
+
+    if (isHidden === "true") {
+      img.style.display = "none";
+      btn.textContent = "Show Image";
+    }
+
+    btn.onclick = function () {
+      if (img.style.display === "none") {
+        img.style.display = "block";
+        btn.textContent = "Hide Image";
+        sessionStorage.setItem("imageHidden", "false");
+      } else {
+        img.style.display = "none";
+        btn.textContent = "Show Image";
+        sessionStorage.setItem("imageHidden", "true");
+      }
+    };
+  </script>
+
+</body>
+</html>
